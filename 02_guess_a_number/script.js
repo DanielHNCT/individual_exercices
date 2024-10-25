@@ -1,31 +1,31 @@
-alert("¡WELCOME!")
-const askNumber = prompt("¿ which number ?");
-let givenNumber = askNumber;
-console.log(askNumber);
-
-
-
+alert("¡WELCOME!");
 const didIWin = (givenNumber) => {
-    if(givenNumber == 22){
+    let numberToGuess = 22
+    if (givenNumber == numberToGuess){
         alert("Bravo ! Vous avez trouvé le nombre")
-        console.log("Bravo ! Vous avez trouvé le nombre")
+        console.log("user found the number")
         return true
-    }else if (givenNumber < 22){
+    }else if (givenNumber < numberToGuess){
         alert("Plus grand")
-        console.log("Plus grand")
+        console.log(`user's number : ${givenNumber}`)
         return false     
-    }else if (givenNumber > 22){
+    }else if (givenNumber > numberToGuess){
         alert("Plus petit")
-        console.log("Plus petit")
+        console.log(`user's number : ${givenNumber}`)
         return false
     }else{
         alert("ceci n'est pas reconnu")
-        console.log("ceci n'est pas reconnu")
+        console.log("unknow user's entry")
         return false
     }
 }
-console.log(didIWin(givenNumber));
 
-function gamePlay () {
-    didIWin(givenNumber);
+const gamePlay = () => { 
+    let result = false;
+    while (!result) {
+        const askNumber = prompt("¿Which number?");
+        let givenNumber = parseInt(askNumber, 10);
+        result = didIWin(givenNumber);
+    }
 }
+gamePlay();

@@ -1,22 +1,25 @@
-//const firstname = "Beyonce";
-let askName = prompt("Nom ?")
+//let firstName = "Beyonce"
+let askName = prompt("nom ?");
 let name = askName;
-let hour = new Date().getHours()
-//let hour = 21;
-const sayHello = (name, hour) => {
-    let message1 = `Bonsoir ${name} !`;
-    let message2 = `Bonjour ${name} !`;
-    
-    if (hour >= 18) {
-        console.log (`Bonsoir ${name}`);
-        document.querySelector('h1').innerText = message1;
-    } else {
+console.log(name);
+let hour = 18;
+const sayHello = (/*firstNamename*/name, hour) => {
+    let message1 = `Bonjour ${name} !`;
+    let message2 = `Bonsoir ${name} !`;
+    if(hour >= 18){
         document.querySelector('h1').innerText = message2;
-    }
-}
+        console.log(`Bonsoir ${name} !`)
+             
+    }else{
+        document.querySelector('h1').innerText = message1;
+        console.log(`Bonjour ${name} !`)
+        
+    }       
+};
 sayHello(name, hour);
-//sayHello(firstname);
-//sayHello(`Beyonce`, 11);
-//sayHello(`Beyonce`, 18);
-//sayHello(`Beyonce`, 17);
+/*
+sayHello(`Beyonce`, 11)
+sayHello(`Beyonce`, 18)
+sayHello(`Beyonce`, 17);
+*/
 

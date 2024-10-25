@@ -1,6 +1,10 @@
 alert("¡WELCOME!");
-const didIWin = (givenNumber) => {
-    let numberToGuess = 22
+
+/*const ask = prompt("¡ choose a number between 0 and 50 !");
+ask = a
+console.log(a);*/
+
+const didIWin = (numberToGuess, givenNumber) => { 
     if (givenNumber == numberToGuess){
         alert("Bravo ! Vous avez trouvé le nombre")
         console.log("user found the number")
@@ -20,6 +24,11 @@ const didIWin = (givenNumber) => {
     }
 }
 
+
+const playerNumber = () => {
+    
+}
+
 const gamePlay = () => { 
     let result = false;
     while (!result) {
@@ -28,4 +37,5 @@ const gamePlay = () => {
         result = didIWin(givenNumber);
     }
 }
-gamePlay();
+//playerNumber();
+//gamePlay();

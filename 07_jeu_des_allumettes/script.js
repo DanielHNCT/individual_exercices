@@ -1,70 +1,81 @@
 // GLOBALES
-let matches = 50
-const remaining_matches = document.getElementById('remaining-matches');
+let remainingMatches = 50;
+
+// DOM
+const body = document.querySelector('body');
 const first_heading = document.querySelector('h1');
 const second_heading = document.querySelector('h2');
-const button = document.querySelector('button');
-const body = document.querySelector('body');
+const button_container = document.getElementById('bouton-container');
+const buttons = document.getElementById('buttons');
+const firstButton = document.createElement('button');
+const secondButton = document.createElement('button');
+const matches = document.getElementById('matches');
 
-body.style.backgroundColor = 'black'
-remaining_matches.innerText = matches
-remaining_matches.style.color = 'red'
-remaining_matches.style.fontSize = '70px'
-
+// STYLES
+body.style.backgroundColor = 'black';
 first_heading.style.color = 'red';
-first_heading.style.textAlign = 'center'
-first_heading.innerText = "¡MATCHES TO REMOVE?!"
+first_heading.style.textAlign = 'center';
+first_heading.innerText = "¡MATCHES TO REMOVE?!";
+firstButton.innerText = "REMOVE MATCHES";
+firstButton.style.fontSize = '50px';
+firstButton.style.backgroundColor = 'red';
+second_heading.innerHTML = "YOU HAVE 50 MATCHES<br>AND YOU MUST CHOOSE TO REMOVE<br>BETWEEN 1 AND 6 MATCHES <br> click below";
+second_heading.style.color = 'red';
+secondButton.innerText = "REPLAY";
+secondButton.style.fontSize = '50px';
+secondButton.style.backgroundColor = 'red';
+secondButton.style.display = 'none';
+buttons.appendChild(firstButton);
+buttons.appendChild(secondButton);
+matches.innerText = remainingMatches;
+matches.style.color = 'red';
+matches.style.fontSize = '100px';
 
-second_heading.innerHTML = "YOU HAVE 50 MATCHES<br>AND YOU MUST CHOOSE TO REMOVE<br>BETWEEN 1 AND 6 MATCHES <br> click below"
-second_heading.style.color = 'red'
 
-button.innerText = "remove matches"
-button.style.color = 'red'
-button.style.backgroundColor = 'black'
-button.style.fontSize = '30px'
+const gamePlay = () => {
+    const ask = prompt("¿How many?");
+    const userChoice = parseInt(ask);
+    if (isNaN(userChoice) || userChoice < 1 || userChoice > 6) {
+        alert("please choose a number between 1 and 6");
+        return;
+    }
+    const result = removeMatches(remainingMatches, userChoice);
+    remainingMatches = result;
+    if (remainingMatches <= 0) {
+        remainingMatches = 0;
+        displayMatches(remainingMatches);
+        firstButton.style.display = 'none';
+        endGame();
+    } else {
+        displayMatches(result);
+    }
+};
 
 
-button.addEventListener('click', () => {
-    const ask = prompt('¿ HOW MANY ?');
-    userChoice = ask;
-    const result = removeMatches(matches, userChoice);
-    matches = result;
-    remaining_matches.innerText = matches
-    //console.log(result);
-    //displayMatches(result)  
+firstButton.addEventListener('click', () => {
+    gamePlay();
 });
 
+
 const removeMatches = (remainingMatches, matchesToRemove) => {
-    result = remainingMatches - matchesToRemove
-    return result
-} 
-
-const displayMatches = () => {
-    result.innerText = remaining_matches;
-}
-
-/*
-const checkMatches = () => {
-
-}
+    return remainingMatches - matchesToRemove;
+};
 
 
-const continueOrEndgame = () => {
+const displayMatches = (result) => {
+    matches.innerText = result;
+};
 
-}
-*/
+
+const endGame = () => {
+    matches.innerText = "Fin de jeu";
+    replayButton();
+};
 
 
-/*
-Creation du bouton avec al methode appendChild. 
-const buttonContainer = document.querySelector('.button-container');
-const newButton = document.createElement('button');
-newButton.textContent = "Choose how many you matches you want to remove"
-buttonContainer.appendChild(newButton);
-newButton.addEventListener('click', () => {
-    const calc = prompt('remember you have 50 matches choose between 1 and 6');
-    const userChoice = calc
-
-    console.log(userChoice);
-})
-*/ 
+const replayButton = () => {
+    secondButton.style.display = "block";
+    secondButton.addEventListener('click', () => {
+        location.reload(); 
+    });
+};

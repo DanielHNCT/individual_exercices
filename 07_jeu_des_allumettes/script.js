@@ -1,7 +1,7 @@
 // GLOBALES
 let remainingMatches = 50;
 
-// DOM
+// DOM SELECTIONS.
 const body = document.querySelector('body');
 const first_heading = document.querySelector('h1');
 const second_heading = document.querySelector('h2');
@@ -11,7 +11,7 @@ const firstButton = document.createElement('button');
 const secondButton = document.createElement('button');
 const matches = document.getElementById('matches');
 
-// STYLES
+// STYLES APPLIQUÉES SUR LE DOM DEPUIS JAVASCRIPT
 body.style.backgroundColor = 'black';
 first_heading.style.color = 'red';
 first_heading.style.textAlign = 'center';

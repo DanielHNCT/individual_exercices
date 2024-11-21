@@ -1,41 +1,74 @@
-alert("¡WELCOME!");
+let firstPlayersNumberToGuess
+let secondPlayersEntry;
 
-/*const ask = prompt("¡ choose a number between 0 and 50 !");
-ask = a
-console.log(a);*/
 
-const didIWin = (numberToGuess, givenNumber) => { 
-    if (givenNumber == numberToGuess){
-        alert("Bravo ! Vous avez trouvé le nombre")
-        console.log("user found the number")
-        return true
-    }else if (givenNumber < numberToGuess){
-        alert("Plus grand")
-        console.log(`user's number : ${givenNumber}`)
-        return false     
-    }else if (givenNumber > numberToGuess){
-        alert("Plus petit")
-        console.log(`user's number : ${givenNumber}`)
-        return false
-    }else{
-        alert("ceci n'est pas reconnu")
-        console.log("unknow user's entry")
-        return false
+const title = document.querySelector('h1');
+const button_container = document.getElementById('button-container');
+const firstButton = document.createElement('button');
+const secondButton = document.createElement('button');
+
+
+button_container.appendChild(firstButton);
+firstButton.innerText = "PLAY";
+button_container.appendChild(secondButton);
+secondButton.innerText = "replay";
+secondButton.style.display = "none"
+
+
+const gameplay = () => {
+
+    firstPlayersNumberToGuess = parseInt(prompt("Joueur 1, veuillez choisir un nombre"));
+    if (isNaN(firstPlayersNumberToGuess)) {
+        alert("Vous devez entrer un nombre valdie !");
+        return gameplay();
     }
-}
 
+    do {
+        secondPlayersEntry = parseInt(prompt("Joueur 2, veuillez choisir un nombre"));
+        if (isNaN(secondPlayersEntry)) {
+            alert("Ce n'est pas un nombre, essayez encore !");
+            continue;
+        }
+    } while (!didIwin(firstPlayersNumberToGuess, secondPlayersEntry));
 
-const playerNumber = () => {
-    
-}
+    endGame();
 
-const gamePlay = () => { 
-    let result = false;
-    while (!result) {
-        const askNumber = prompt("¿Which number?");
-        let givenNumber = parseInt(askNumber, 10);
-        result = didIWin(givenNumber);
+};
+
+const didIwin = (playersNumberToguess, numberToGuess) => {
+
+    if (numberToGuess == playersNumberToguess) {
+        alert("Bravo ! Vous avez deviné le nombre !");
+        return true;
+    }     
+    else if (numberToGuess < playersNumberToguess) {
+        alert("Plus grand !");
+    } else if (numberToGuess > playersNumberToguess) {
+        alert("Plus petit !");
     }
-}
-//playerNumber();
-//gamePlay();
+    return false;
+
+};
+
+const endGame = () => {
+
+    firstButton.style.display = 'none';
+    title.innerText = '';
+    title.innerText = "FIN DE JEU";
+    secondButton.style.display = 'block';
+
+};
+
+secondButton.addEventListener('click', () => {
+
+    title.innerText = '¡ WELCOME !';
+    secondButton.style.display = "none";
+    gameplay();
+
+});
+
+firstButton.addEventListener('click', () => {
+
+    gameplay();
+
+});

@@ -1,23 +1,31 @@
 body {
-    height: 100vh; /* Assure que le corps prend toute la hauteur de la fenêtre */
-    margin: 0; /* Supprime les marges par défaut */
-    background: linear-gradient(to bottom, red, purple, blue);
-}
-h1{
-    font-size: 80px;
-    text-align: center;
+    height: 100vh; /* Assure que le corps du document prend toute la hauteur de la fenêtre, peu importe la taille de l'écran. */
+    margin: 0; /* Supprime les marges par défaut du `body`, ce qui évite des espaces blancs autour de la page. */
+    background: linear-gradient(to bottom, red, purple, blue); /* Applique un dégradé de haut (rouge) en bas (bleu). */
 }
 
-button{
-    background-color: blueviolet;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+h1 {
+    font-size: 80px; /* Définit la taille de la police du titre en 80 pixels, ce qui le rend très grand. */
+    text-align: center; /* Centre horizontalement le texte dans la page. */
+}
+
+#button-container {
+    display: flex; /* Active le mode flexbox pour organiser les enfants (boutons) du conteneur. */
+    justify-content: center; /* Centre les boutons horizontalement dans le conteneur. */
+    align-items: center; /* Centre les boutons verticalement dans le conteneur. */
+    height: 50vh; /* Définit la hauteur du conteneur à 50 % de la hauteur de la fenêtre. */
+}
+
+button {
+    background-color: blueviolet; /* Définit la couleur de fond des boutons (violet). */
+    color: #fff; /* Définit la couleur du texte en blanc. */
+    font-weight: bold; /* Met le texte en gras. */
+    border: none; /* Supprime les bordures autour des boutons. */
+    border-radius: 4px; /* Ajoute des coins arrondis avec un rayon de 4 pixels. */
+    padding: 10px 20px; /* Ajoute un espace intérieur de 10px en haut/bas et 20px à gauche/droite. */
+    margin-top: 10px; /* Ajoute un espace de 10 pixels au-dessus du bouton pour séparer les boutons entre eux. */
+    cursor: pointer; /* Change le curseur en une main lorsqu'on survole les boutons. */
+    transition: background-color 0.3s; /* Ajoute une animation fluide sur le changement de couleur de fond en 0,3 seconde. */
 }
 
 

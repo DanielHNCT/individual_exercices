@@ -68,7 +68,5 @@ secondButton.addEventListener('click', () => {
 });
 
 firstButton.addEventListener('click', () => {
-
     gameplay();
-
 });

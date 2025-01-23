@@ -32,26 +32,6 @@ matches.style.color = 'red';
 matches.style.fontSize = '100px';
 
 
-const gamePlay = () => {
-    const ask = prompt("¿How many?");
-    const userChoice = parseInt(ask);
-    if (isNaN(userChoice) || userChoice < 1 || userChoice > 6) {
-        alert("please choose a number between 1 and 6");
-        return;
-    }
-    const result = removeMatches(remainingMatches, userChoice);
-    remainingMatches = result;
-    if (remainingMatches <= 0) {
-        remainingMatches = 0;
-        displayMatches(remainingMatches);
-        firstButton.style.display = 'none';
-        endGame();
-    } else {
-        displayMatches(result);
-    }
-};
-
-
 firstButton.addEventListener('click', () => {
     gamePlay();
 });
@@ -78,4 +58,23 @@ const replayButton = () => {
     secondButton.addEventListener('click', () => {
         location.reload(); 
     });
+};
+
+const gamePlay = () => {
+    const ask = prompt("¿How many?");
+    const userChoice = parseInt(ask);
+    if (isNaN(userChoice) || userChoice < 1 || userChoice > 6) {
+        alert("please choose a number between 1 and 6");
+        return;
+    }
+    const result = removeMatches(remainingMatches, userChoice);
+    remainingMatches = result;
+    if (remainingMatches <= 0) {
+        remainingMatches = 0;
+        displayMatches(remainingMatches);
+        firstButton.style.display = 'none';
+        endGame();
+    } else {
+        displayMatches(result);
+    }
 };

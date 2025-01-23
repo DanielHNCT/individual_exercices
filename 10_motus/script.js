@@ -6,6 +6,7 @@ const missingLetters = document.getElementById('missing-letters');
 const lettersNotInWord = document.getElementById('letters-not-in-word')
 const userWIn = document.getElementById('user-win');
 const button = document.getElementById('btn');
+const input = document.getElementById('word');
 
 const tryWord = (word, base) => {
 	// TODO: fix jeu sensible à la casse.
@@ -48,15 +49,22 @@ const guess = () => {
   if (result) {
     WellPlacedLetters.innerText = `Bien placé: ${word}`
   }
+  document.getElementById("word").value = '';
+  /*
   //userEntry = word;
   console.log(result)
-  document.getElementById("word").value = '';
   WellPlacedLetters.innerText = `Bien placé: ${result.wellPlaced.join(', ')}`
   missingLetters.innerText = `Mal placé: ${result.missplaced.join(', ')}`
   lettersNotInWord.innerText = `Pas dans le mot: ${result.notInWord.join(', ')}`
-  result.wellPlaced.length === base.length ? userWIn.innerText = 'Vous avez gagné' : null
+  result.wellPlaced.length === base.length ? userWIn.innerText = 'Vous avez gagné' : null*/
 }
 
 button.addEventListener('click', () => {
     guess();
-})
+});
+
+input.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    guess();
+  }
+});

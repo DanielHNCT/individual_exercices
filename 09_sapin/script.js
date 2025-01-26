@@ -59,4 +59,8 @@ const afficherTriangleGauche = (n) => {
 }
 afficherTriangleGauche(4);
 
+const afficherSapin = () => {
+
+}
+afficherSapin(3, 3);
 

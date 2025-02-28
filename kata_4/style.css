@@ -1,0 +1,11 @@
+header {
+    background-color: white;
+    border: solid 3px red;
+    display: flex;
+}
+
+
+li {
+    list-style: none;
+    display: flex;
+}

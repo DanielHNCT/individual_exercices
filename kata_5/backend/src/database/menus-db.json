@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "plate": "Hello World Burger",
+    "description": "Un cheeseburger classique (pain, steak, fromage, salade, sauce).",
+    "image": "🍔"
+  },
+  {
+    "id": 2,
+    "plate": "404 Not Found Fries",
+    "description": "Des frites maison avec une sauce mystère (choisie aléatoirement par le backend !).",
+    "image": "🍟"
+  },
+  {
+    "id": 3,
+    "plate": "JSON Nuggets",
+    "description": "Nuggets de poulet avec 3 sauces au choix (ketchup, mayo, barbecue).",
+    "image": "🍗"
+  },
+  {
+    "id": 4,
+    "plate": "Git Pull Tacos",
+    "description": "Un taco simple avec poulet, salade, fromage et sauce.",
+    "image": "🌮"
+  },
+  {
+    "id": 5,
+    "plate": "Front-end Salad",
+    "description": "Une salade légère avec tomates, feta et vinaigrette maison.",
+    "image": "🥗"
+  },
+  {
+    "id": 6,
+    "plate": "Back-End Brownie",
+    "description": "Un brownie moelleux au chocolat.",
+    "image": "🍫"
+  },
+  {
+    "id": 7,
+    "plate": "Full Stack Menu",
+    "description": "Un combo burger, frites et boisson.",
+    "image": "🍽️"
+  },
+  {
+    "id": 8,
+    "plate": "API Pasta",
+    "description": "Pâtes à la sauce tomate et basilic, toujours en REST.",
+    "image": "🍝"
+  },
+  {
+    "id": 9,
+    "plate": "DevOps Pizza",
+    "description": "Une pizza quatre fromages, bien orchestrée.",
+    "image": "🍕"
+  },
+  {
+    "id": 10,
+    "plate": "Middleware Wrap",
+    "description": "Wrap au poulet, crudités et sauce légère pour lier le tout.",
+    "image": "🌯"
+  },
+  {
+    "id": 11,
+    "plate": "Dark Mode Coffee",
+    "description": "Un café noir bien corsé, pour coder toute la nuit.",
+    "image": "☕"
+  },
+  {
+    "id": 12,
+    "plate": "Cloud Storage Smoothie",
+    "description": "Un smoothie aux fruits frais, parfait pour recharger les batteries.",
+    "image": "🍹"
+  },
+  {
+    "id": 13,
+    "plate": "Syntax Error Sundae",
+    "description": "Glace à la vanille avec un coulis de chocolat... sans erreur !",
+    "image": "🍨"
+  },
+  {
+    "id": 14,
+    "plate": "Deployment Donut",
+    "description": "Un donut au chocolat, déployé avec soin.",
+    "image": "🍩"
+  },
+  {
+    "id": 15,
+    "plate": "Kernel Kebab",
+    "description": "Un kebab bien garni avec une sauce secrète.",
+    "image": "🥙"
+  }
+]
+  

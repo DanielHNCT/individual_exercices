@@ -40,6 +40,7 @@ const userVsUser = () => {
 };
 
 const userVsMachine = async () => {
+    console.clear();
     const numberToGuess = Math.floor(Math.random() * 50);
     console.log(chalk.blue(figlet.textSync("1 player")));
 
@@ -49,7 +50,7 @@ const userVsMachine = async () => {
 };
 
 const main = async () => {
-	
+	console.clear();
     console.log(chalk.blue(figlet.textSync('GUESS')));
     console.log(chalk.cyan("the game is about to guess a number\n"))
 	const userChoice = await ask("1: 1 player\n2: 2 players\nChoices [1 - 2 or exit]\n");

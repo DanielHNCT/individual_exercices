@@ -35,8 +35,15 @@ const askNumber = async (numToGuess) => {
     };
 };
 
-const userVsUser = () => {
-    
+const userVsUser = async () => {
+    console.log(chalk.blue(figlet.textSync("2 Players")));
+    console.log(chalk.cyan("RULES: first user types a number, the second one try to guess\n"));
+    const firstUserNum = await ask("First user please type a number\n");
+    console.clear();
+    //console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n');
+    if (!await askNumber(firstUserNum)) {
+        console.log(chalk.green("Congratulations you fou d the numbers"));
+    }
 };
 
 const userVsMachine = async () => {

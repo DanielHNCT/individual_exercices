@@ -1,11 +1,13 @@
+body {
+    background-color: grey;
+}
+
 header {
-    background-color: white;
     border: solid 3px red;
     display: flex;
 }
 
 
-li {
-    list-style: none;
+.toggle-btn {
     display: flex;
 }

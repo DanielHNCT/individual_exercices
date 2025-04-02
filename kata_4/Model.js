@@ -1,5 +1,6 @@
 import pkg from 'pg';
 const { Pool } = pkg;
+
 const pool = new Pool({
     user: 'nexus',
     host: 'localhost',
@@ -7,6 +8,7 @@ const pool = new Pool({
     password: '',
     port: 5432
 });
+
 export class Model {
     constructor() { }
     // constructor(client:void){

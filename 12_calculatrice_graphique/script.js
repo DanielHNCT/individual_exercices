@@ -12,10 +12,10 @@ const refs = [
 refs.forEach(item => {
     console.log(item.textContent)
 });
-//console.log(refs[0].textContent);
+console.log(refs[0].textContent);
 
-//let firstUserEntry = '';
-//let secondUserEntry = '';
+let firstUserEntry = '';
+let secondUserEntry = '';
 
 class Calculator {
     constructor (firstEntry, operator, secondEntry) {
@@ -38,9 +38,9 @@ class Calculator {
         let second = Number(this.secondEntry)
         Number(this.secondEntry);
         if (this.operator === '+') {
-            //result = this.firstEntry + this.secondEntry;
+            result = this.firstEntry + this.secondEntry;
             console.log(first + second);
-            //return result;
+            return result;
             //return this.firstEntry + this.secondEntry
         } else if (this.operator === '-') {
             //result = this.firstEntry - this.secondEntry;
@@ -67,54 +67,55 @@ class Calculator {
 };
 
 const firstEntry = '11';
-const operator2 = '*';
+const operator2 = '+';
 const secondEntry = '2';
-// const test = new Calculator(firstEntry, operator2, secondEntry);
+const test = new Calculator(firstEntry, operator2, secondEntry);
+test.calculate();
 // console.log(test);
 // test.calculate();
 
-const eraseEntry = (numbers) => {
-    const array = /*input.value*/numbers.split('');
-    array.pop();
-    const erasedNumber = array.join('');
-    return erasedNumber;
-}
+// const eraseEntry = (numbers) => {
+//     const array = /*input.value*/numbers.split('');
+//     array.pop();
+//     const erasedNumber = array.join('');
+//     return erasedNumber;
+// }
 
-const displayNumbers = (number) => {
-    input.value += number;
-};
-
-btnCtn.addEventListener('click', (event) => {
-    if (event.target.tagName === 'BUTTON') {
-        if (Number(event.target.textContent)) {
-            displayNumbers(event.target.textContent)
-            //console.log(event.target.textContent)
-        } else if (!Number(event.target.textContent)) {
-            if (event.target.textContent === 'c') {
-                console.log('hey')
-                eraseEntry(input.value);
-            }
-            // console.log(event.target.textContent);
-            displayNumbers(event.target.textContent)
-        }
-    }
-});
-
-
+// const displayNumbers = (number) => {
+//     input.value += number;
+// };
 
 // btnCtn.addEventListener('click', (event) => {
 //     if (event.target.tagName === 'BUTTON') {
 //         if (Number(event.target.textContent)) {
 //             displayNumbers(event.target.textContent)
-//             console.log(event.target.textContent)
+//             //console.log(event.target.textContent)
 //         } else if (!Number(event.target.textContent)) {
-//             console.log(event.target.textContent)
+//             if (event.target.textContent === 'c') {
+//                 console.log('hey')
+//                 eraseEntry(input.value);
+//             }
+//             // console.log(event.target.textContent);
 //             displayNumbers(event.target.textContent)
 //         }
 //     }
 // });
 
-//Number(event.target.textContent)
+
+
+// // btnCtn.addEventListener('click', (event) => {
+// //     if (event.target.tagName === 'BUTTON') {
+// //         if (Number(event.target.textContent)) {
+// //             displayNumbers(event.target.textContent)
+// //             console.log(event.target.textContent)
+// //         } else if (!Number(event.target.textContent)) {
+// //             console.log(event.target.textContent)
+// //             displayNumbers(event.target.textContent)
+// //         }
+// //     }
+// // });
+
+// //Number(event.target.textContent)
 
 
 
@@ -124,23 +125,25 @@ btnCtn.addEventListener('click', (event) => {
 
 
 
+const categoris = {
+    fiction, documentaire
+}
 
 
 
 
 
+// // const btnCtn = document.getElementById('btns-ctn')
+// // const displayInput = document.getElementById('display-input');
+// // const input = document.querySelector('input')
+// // let firstEntry = 0;
 
-// const btnCtn = document.getElementById('btns-ctn')
-// const displayInput = document.getElementById('display-input');
-// const input = document.querySelector('input')
-// let firstEntry = 0;
-
-// btnCtn.addEventListener('click', (event) => {
-//     if  (/*event.target.tagName === 'BUTTON' && */event.target.textContent === '*', '%', '+', '-', '÷', '=') {
-//         return;
-//     } else if (event.target.tagName === 'BUTTON') {
-//         firstEntry += event.target.textContent
-//         console.log(firstEntry)
-//         input.value = firstEntry
-//     }
-// });
+// // btnCtn.addEventListener('click', (event) => {
+// //     if  (/*event.target.tagName === 'BUTTON' && */event.target.textContent === '*', '%', '+', '-', '÷', '=') {
+// //         return;
+// //     } else if (event.target.tagName === 'BUTTON') {
+// //         firstEntry += event.target.textContent
+// //         console.log(firstEntry)
+// //         input.value = firstEntry
+// //     }
+// // });

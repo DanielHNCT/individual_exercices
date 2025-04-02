@@ -1,9 +1,4 @@
-// import express from 'express';
-// const router = express.Router();
-// import { OrderModel } from '../model/orderModel.js';
+import express from 'express';
+const router = express.Router();
 
-// router.get('/order', async (req, res) => {
-
-// });
-
-// export {router as order};
+export { router as order };

@@ -1,3 +1,4 @@
+import e from "express";
 import { MenuModel } from "../model/menuModel.js";
 
 export const MenuController = {
@@ -20,10 +21,25 @@ export const MenuController = {
         }
     },
 
-    createMenu: async () => {
+    createMenu: async (data) => {
         try {
-            const createdMenu = MenuModel.create();
-            return createdMenu.rows;
+            await MenuModel.create(data);
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    updateMenu: async (data) => {
+        try {
+            await MenuModel.update(data);
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    deleteMenu: async (data) => {
+        try {
+            await MenuModel.delete(data);
         } catch (error) {
             console.error(error);
         }

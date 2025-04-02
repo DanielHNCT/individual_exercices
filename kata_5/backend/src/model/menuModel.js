@@ -23,37 +23,32 @@ export const MenuModel = {
         
     },
 
-    create: async () => {
+    create: async (data) => {
         try {
-            const menuCreated = await pool.query(`INSERT INTO menus (plate, description, image)
-                                                  VALUES ($1, $2, $3)` [plate, descritpion, image]);
-            return menuCreated.rows;
-        } catch (error) {
-            console.error(error);
-        }
-        
-    },
-    
-    update: async ({plate, description, image, id}) => {
-        try {
-            const menuUpdated = await pool.query(`UPDATE menus 
-                                                  SET plate = $1, description = $2, image = $3
-                                                  WHERE id = $4)` [plate, description, image, id]);
-            return menuUpdated.rows;
+            await pool.query(`INSERT INTO menus (plate, description, image)
+                              VALUES ($1, $2, $3)`, [data.plate, data.description, data.image]);
         } catch (error) {
             console.error(error);
         }
     },
     
+    update: async (data) => {
+        try {
+            await pool.query(`UPDATE menus 
+                              SET plate = $1, description = $2, image = $3
+                              WHERE id = $4`, [data.plate, data.description, data.image, data.id]);
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
     delete: async (id) => {
         try {
-            const menuDeleted = await pool.query(`DELETE FROM menus
-                                                  WHERE id = $1`[id]);
-            return menuDeleted.rows;
+            await pool.query(`DELETE FROM menus
+                              WHERE id = $1`, [id]);
         } catch (error) {
             console.error(error);
-        }
-        
+        }   
     }
 }
  

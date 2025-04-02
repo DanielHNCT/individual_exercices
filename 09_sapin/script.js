@@ -6,6 +6,15 @@ console.log("/***|***\\ "); // 0 derehca
 // const afficherPointeSapin =  (height) => {}
 // afficherPointeSapin()
 
+const top = '+';
+const left = '/';
+const right = '\\';
+let star = '*';
+const base = '|';
+let rightTreeLine = '';
+let leftTreeLine = '';
+const espacement = '    ';
+
 const afficherEtoiles = (n) => {
     for (let i = 0; i < n; i++) {
         line += star
@@ -20,14 +29,6 @@ const afficherRectangle = (height, width) => {
     }
 }
 
-const top = '+';
-const left = '/';
-const right = '\\';
-let star = '*';
-const base = '|';
-let rightTreeLine = '';
-let leftTreeLine = '';
-const espacement = '    ';
 
 
 const afficherTriangleDroite = (n) => {
@@ -43,17 +44,17 @@ afficherTriangleDroite(4);
 const afficherTriangleGauche = (n) => {
     let arrSpace = espacement.split('');
     let newBuild;
-    //console.log(arrSpace);
+    console.log(arrSpace);
     console.log('    /');
     for (let i = 0; i < n; i++) {
         let line = leftTreeLine += star
         let build = left + line 
-        //console.log(build)
+        console.log(build)
         let arrStar = build.split(' ');
-        //console.log(arrStar)
+        console.log(arrStar)
         arrSpace.splice(0, 1);
         newBuild = arrSpace.concat(arrStar);
-        //console.log(newBuild)
+        console.log(newBuild)
         console.log(newBuild.join(''))
     }
 }

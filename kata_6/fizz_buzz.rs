@@ -1,8 +1,8 @@
-fn fizz_buzz(n: i8) -> Vec<String> {
+fn fizz_buzz(n: u8) -> Vec<String> {
     let mut vec: Vec<String> = Vec::new();
     
-    let mut i = 1;
-    while i < n {
+    let mut i: u8 = 1;
+    while i <= n {
         
         if i % 3 == 0 && i % 5 == 0 {
             vec.push("FizzBuzz".to_string());
@@ -21,7 +21,7 @@ fn fizz_buzz(n: i8) -> Vec<String> {
 }
 
 fn main() {
-    let answer: Vec<String> = fizz_buzz(16);
+    let answer: Vec<String> = fizz_buzz(15);
     println!("{:?}", answer);
 }
 
